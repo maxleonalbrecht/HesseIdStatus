@@ -1,15 +1,8 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using HesseIdStatus.Models;
-using RestSharp;
-using System.Text.RegularExpressions;
 
 namespace HesseIdStatus
 {
@@ -17,11 +10,8 @@ namespace HesseIdStatus
     {
         [FunctionName("HesseIdStatus")]
         public static Id Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            ILogger log)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
             var id = new Id()
             {
                 idIdentifier = req.Query["IdIdentifier"],
@@ -29,10 +19,24 @@ namespace HesseIdStatus
                 issuingCity = req.Query["IssuingCity"]
             };
 
+            if(id.idIdentifier == "")
+            {
+                throw new System.Exception("IdIdentifier is empty");
+            }
+
+            if (id.idType == "")
+            {
+                throw new System.Exception("IdType is empty");
+            }
+
+            if (id.issuingCity == "")
+            {
+                throw new System.Exception("IssuingCity is empty");
+            }
+
             id.UpdateStatus();
 
             return id;
-
         }
     }
 }

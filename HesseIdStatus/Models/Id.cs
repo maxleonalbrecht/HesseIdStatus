@@ -22,7 +22,7 @@ namespace HesseIdStatus.Models
             this.idStatus = EvaluateStatus(parsedResponse);
         }
 
-        static IRestResponse GetDataFromEkom(string idIdentifier, string idType, string issuingCity)
+        IRestResponse GetDataFromEkom(string idIdentifier, string idType, string issuingCity)
         {
             var apiEndpoint = "https://passauskunft.ekom21.de/mandant/" + issuingCity.ToLower() + "/default.aspx";
 
