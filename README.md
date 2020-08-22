@@ -13,4 +13,9 @@ API Endpoint running at: https://hesseidstatus.azurewebsites.net/api/HesseIdStat
 
 ## Example
 
+### Request
+
 Postwoman Example: [Link](https://postwoman.io/?method=GET&url=https://hesseidstatus.azurewebsites.net&path=/api/HesseIdStatus?idIdentifierL2872=%253Cid%253E&idType=rbPersonalausweis&issuingCity=frankfurt&params=%5B%7B%22key%22:%22idIdentifierL2872%22,%22value%22:%22%253Cid%253E%22,%22type%22:%22query%22%7D,%7B%22key%22:%22idType%22,%22value%22:%22rbPersonalausweis%22,%22type%22:%22query%22%7D,%7B%22key%22:%22issuingCity%22,%22value%22:%22frankfurt%22,%22type%22:%22query%22%7D%5D)
+
+### Response
+
