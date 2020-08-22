@@ -21,7 +21,7 @@ Postwoman Example: [Link](https://postwoman.io/?method=GET&url=https://hesseidst
 
 ```json
 {
-  "idIdentifier": L9XY1L1234,
+  "idIdentifier": "L9XY1L1234",
   "idType": "rbPersonalausweis",
   "issuingCity": "frankfurt",
   "idStatus": {
