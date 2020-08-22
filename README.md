@@ -19,3 +19,16 @@ Postwoman Example: [Link](https://postwoman.io/?method=GET&url=https://hesseidst
 
 ### Response
 
+```json
+{
+  "idIdentifier": L9XY1L1234,
+  "idType": "rbPersonalausweis",
+  "issuingCity": "frankfurt",
+  "idStatus": {
+    "readyForPickup": false,
+    "pickedUp": false,
+    "inProduction": true
+  }
+}
+
+```
